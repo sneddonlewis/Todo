@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Todo.Application;
 using Todo.Infrastructure;
 using Todo.Persistence;
@@ -32,5 +33,20 @@ public static class StartupExtensions
         app.MapControllers();
 
         return app;
+    }
+
+    public static async Task ResetDatabaseAsync(this WebApplication app)
+    {
+        using var scope = app.Services.CreateScope();
+        try
+        {
+            TodoDbContext context = scope.ServiceProvider.GetService<TodoDbContext>();
+            await context.Database.EnsureDeletedAsync();
+            await context.Database.MigrateAsync();
+        }
+        catch (Exception ex)
+        {
+            // do some logging
+        }
     }
 }
