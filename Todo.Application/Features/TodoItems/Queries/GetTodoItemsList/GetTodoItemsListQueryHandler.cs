@@ -2,7 +2,7 @@
 using MediatR;
 using Todo.Application.Contracts.Persistence;
 
-namespace Todo.Application.Features.TodoItems
+namespace Todo.Application.Features.TodoItems.Queries.GetTodoItemsList
 {
     public class GetTodoItemsListQueryHandler :
         IRequestHandler<GetTodoItemsListQuery, List<TodoItemListVm>>

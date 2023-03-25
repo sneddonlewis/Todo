@@ -1,4 +1,4 @@
-﻿namespace Todo.Application.Features.TodoItems
+﻿namespace Todo.Application.Features.TodoItems.Queries.GetTodoItemsList
 {
     public class TodoItemListVm
     {
