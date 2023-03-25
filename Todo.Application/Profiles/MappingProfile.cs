@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Todo.Application.Features.TodoItems.Queries;
 using Todo.Application.Features.TodoItems.Queries.GetTodoItemDetail;
+using Todo.Application.Features.TodoItems.Queries.GetTodoItemsList;
 using Todo.Domain.Entities;
 
 namespace Todo.Application.Profiles
